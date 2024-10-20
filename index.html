@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="description" content="Betech - Organized by BEST Madrid">
+          <title>Betech - Organized by BEST</title>
+          <style>
+              /* General Styles */
+              body, html {
+                  margin: 0;
+                  padding: 0;
+                  font-family: 'Arial', sans-serif;
+                  background-color: #111111;
+                  color: #333;
+                  height: 100%;
+                  display: flex;
+                  flex-direction: column;
+              }
+              
+              header {
+                  background: linear-gradient(135deg, #008cba, #005f75);
+                  color: #fff;
+                  padding: 1% 10%;
+                  text-align: left;
+              }
+              header h1 {
+                  margin: 0;
+                  font-size: 2.5rem;
+              }
+              header p {
+                  margin: 10px 0 0;
+                  font-size: 1.2rem;
+              }
+              
+              /* Navigation Styles */
+              nav {
+                  display: flex;
+                  justify-content: center;
+                  background-color: #005f75;
+                  padding: 10px 0;
+              }
+              nav a {
+                  color: #fff;
+                  margin: 0 15px;
+                  text-decoration: none;
+                  font-weight: bold;
+                  transition: color 0.3s;
+              }
+              nav a:hover {
+                  color: #ffd700;
+              }
+              
+              /* Main Content Styles */
+              .container {
+                  max-width: 1100px;
+                  margin: auto;
+                  padding: 20px;
+                  flex: 1; /* Allows the content area to grow and push the footer down */
+              }
+              .about {
+                  background-color: #fff;
+                  padding: 30px;
+                  border-radius: 10px;
+                  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+                  margin-bottom: 20px;
+              }
+              .about h2 {
+                  margin-top: 0;
+                  color: #008cba;
+              }
+              .about p {
+                  line-height: 1.6;
+              }
+              
+              /* Event Section */
+              .event {
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 20px;
+              }
+              .event-card {
+                  background-color: #fff;
+                  border-radius: 10px;
+                  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+                  padding: 20px;
+                  flex: 1 1 calc(33.333% - 40px);
+                  box-sizing: border-box;
+                  transition: transform 0.3s;
+              }
+              .event-card:hover {
+                  transform: translateY(-10px);
+              }
+              .event-card h3 {
+                  color: #005f75;
+              }
+              .event-card p {
+                  margin: 10px 0;
+              }
+              
+              /* Footer Styles */
+              footer {
+                  background-color: #005f75;
+                  color: #fff;
+                  text-align: center;
+                  padding: 15px 0;
+              }
+              footer p {
+                  margin: 0;
+              }
+              footer a {
+                  color: #ffd700;
+                  text-decoration: none;
+              }
+              .download-link {
+                    display: inline-block;
+                    background-color: #008cba;
+                    color: #fff;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    transition: background-color 0.3s;
+               }
+
+               .download-link:hover {
+                   background-color: #005f75;
+               }
+
+               .faq {
+                   background-color: #fff;
+                   padding: 30px;
+                   border-radius: 10px;
+                   box-shadow: 0 0 15px rgba(0,0,0,0.1);
+                   width: 1000px; /* Set a fixed width for the FAQ section */
+                   max-width: 100%; /* Ensure it doesn’t exceed the screen width on smaller devices */
+                   margin-left: auto; /* Center the container */
+                   margin-right: auto; /* Center the container */
+               }
+
+               .faq h2 {
+                   color: #008cba;
+                   margin-bottom: 20px;
+               }
+
+               .faq-item {
+                   margin-bottom: 15px;
+                   overflow: hidden; /* Hide overflow */
+                   /*height: 60px; /* Set a fixed height */
+                   transition: height 0.3s ease; /* Smooth transition for height change */
+                   width: 100%; /* Ensure items take full width of the FAQ container */
+               }
+
+               .faq-item h3 {
+                   font-size: 1.2rem;
+                   color: #005f75;
+                   cursor: pointer;
+                   margin: 0;
+                   transition: color 0.3s;
+               }
+
+               .faq-item h3:hover {
+                   color: #008cba;
+               }
+
+               .faq-item p {
+                   margin: 5px 0 0;
+                   line-height: 1.6;
+                   display: none; /* Initially hide answers */
+               }
+
+               .faq-item.active p {
+                   display: block; /* Show answer when active */
+                   height: auto; /* Allow the height to be auto when active */
+               }
+
+               .join-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    text-align: center; /* Center the text */
+}
+
+.join-button {
+    display: inline-block;
+    background-color: #008cba; /* Button color */
+    color: #fff; /* Text color */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s; /* Transition for hover effect */
+    font-size: 1.1rem; /* Button font size */
+}
+
+.join-button:hover {
+    background-color: #005f75; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+              
+              /* Responsive Design */
+              @media (max-width: 768px) {
+                  .event {
+                      flex-direction: column;
+                  }
+                  .event-card {
+                      flex: 1 1 100%;
+                  }
+              }
+          </style>
+      </head>
+<body>
+    <header>
+          
+        <h1>Betech</h1>
+        <p>Organized by BEST - Board of European Students of Technology</p>
+    </header>
+    
+    <nav>
+    </nav>
+    
+    <div class="container">
+        <section id="about" class="about">
+            <h2>About Betech</h2>
+            <p>Betech is the annual technology and innovation event organized by BEST (Board of European Students of Technology). It brings together the students of UPM to engage in tech talks and competitions. Join us for an experience that blends learning, fun, and an unforgettable community spirit!</p>
+        </section>
+        
+        <section id="events" class="event">
+            <div class="event-card">
+                <h3>Tech Talks</h3>
+                <p>Join industry experts and thought leaders as they discuss the latest trends in technology, AI, and innovation. Gain insights into the future of tech!</p>
+            </div>
+            <div class="event-card">
+                <h3>Team Design</h3>
+                <p>Using only the provided tools and materials and your technical skills, to design and create a new item or a tool, which would fulfill the task requirements. Each year new and innovative tasks are presented, which always require teamwork, creativity and technical skills.</p>
+            </div>
+            <div class="event-card">
+                <h3>Hackathon</h3>
+                <p>Theoretical challenge in which students are given a technical, legal, practical or social problem that needs to be solved within a limited time and with limited resources. For this purpose, the students need to abstract and analyze the problem and present their solution</p>
+            </div>
+        </section>
+    </div>
+    <div class="container">
+     <section id="join-form" class="join-form">
+         <h2>Join Us</h2>
+         <p>Ready to join Betech? Fill out the form below:</p>
+         <a href="https://forms.gle/R8tEcGgbfAbCfYy69" target="_blank" class="join-button">Join Now</a>
+     </section>
+     </div>
+    <div class="container">
+          <section id="schedule" class="schedule">
+              <h2>Event Schedule</h2>
+              <p>Take a quick look at the schedule:</p>
+              <a href="Horario BeTech - Sheet1.pdf" target="_blank">
+                  <img src="preview_horario.png" alt="Schedule Preview" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+              </a>
+              <p><a href="Horario BeTech - Sheet1.pdf" target="_blank" class="download-link">Download the full schedule (PDF)</a></p>
+     </section>
+     </div>
+
+     <div class="container">
+          <section id="common-questions" class="faq">
+              <h2>Common Questions</h2>
+              <div class="faq-item">
+                  <h3>What is Betech?</h3>
+                  <p>Betech is an annual event organized by BEST (Board of European Students of Technology) focused on bringing together students from across Europe to learn and connect over the latest developments in technology.</p>
+              </div>
+              <div class="faq-item">
+                  <h3>Who can attend the event?</h3>
+                  <p>Any student of Universidad Politecnica de Madrid can Participate</p>
+              </div>
+              <div class="faq-item">
+                  <h3>How long is each challenge?</h3>
+                  <p>Each challenge will last at least 6 hours long, excluding lunch and coffee break.</p>
+              </div>
+              <div class="faq-item">
+                  <h3>How many people are allowed in a team?</h3>
+                  <p>Each team shall have 4 members. If there is a solo registration, the organising team shall club you up with the other solo registrations.</p>
+              </div>
+              <div class="faq-item">
+                  <h3>Can I register individually or should we register as a team? </h3>
+                  <p>Yes, you can register Solo (individually). If you have a team, we advise you to register together.</p>
+              </div>
+          </section>
+      </div>
+    
+    <footer>
+        <p>&copy; 2024 Betech | Organized by BEST Madrid| All Rights Reserved</p>
+        <p>Contact us: <a href="mailto:betech@bestmadrid.org" style="color: #ffd700;">betech@bestmadrid.org</a></p>
+    </footer>
+</body>
+<script>
+     document.querySelectorAll('.faq-item h3').forEach(item => {
+         item.addEventListener('click', () => {
+             const parent = item.parentElement;
+             parent.classList.toggle('active');
+         });
+     });
+ </script>
+</html>
