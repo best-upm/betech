@@ -197,6 +197,39 @@
     background-color: #005f75; /* Darker shade on hover */
     transform: translateY(-2px); /* Slight lift effect on hover */
 }
+.sponsors {
+    background-color: #f9f9f9; /* Light background color */
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.sponsors h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.sponsor-logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    gap: 20px; /* Space between logos */
+    justify-items: center; /* Center logos in each grid cell */
+}
+
+.sponsor-logos img {
+    max-width: 80%; /* Set max width for each logo */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.sponsor-logos img:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
 
               
               /* Responsive Design */
@@ -237,7 +270,7 @@
             </div>
             <div class="event-card">
                 <h3>Hackathon</h3>
-                <p>Theoretical challenge in which students are given a technical, legal, practical or social problem that needs to be solved within a limited time and with limited resources. For this purpose, the students need to abstract and analyze the problem and present their solution</p>
+                <p>Having your laptop, your knowledge and limited time, you will have to solve a series of problems with your team by utilizing different tools and programs </p>
             </div>
         </section>
     </div>
@@ -252,15 +285,22 @@
           <section id="schedule" class="schedule">
               <h2>Event Schedule</h2>
               <p>Take a quick look at the schedule:</p>
-              <a href="Horario BeTech - Sheet1.pdf" target="_blank">
-                  <img src="preview_horario.png" alt="Schedule Preview" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+              <a href="Horario BeTech - Competicones separadas.pdf" target="_blank">
+                  <img src="Horario BeTech - Hackathon.png" alt="Schedule Preview" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+                  <img src="Horario BeTech - TD.png" alt="Schedule Preview" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
               </a>
-              <p><a href="Horario BeTech - Sheet1.pdf" target="_blank" class="download-link">Download the full schedule (PDF)</a></p>
+              <p><a href="Horario BeTech - Competicones separadas.pdf" target="_blank" class="download-link">Download the full schedule (PDF)</a></p>
      </section>
      </div>
-
      <div class="container">
-          <section id="common-questions" class="faq">
+          <div class="event-card">
+          <h2>Survival Guide</h2>
+          <p>The Survival Guide is the document that contains all the information you need for the event</p>
+          <p><a href="https://drive.google.com/file/d/1zIvnmMfQmOIR3vPykgEIgKVS0fNmKd76/view" target="_blank" class="download-link">Download the Survival Guide (PDF)</a></p>
+     </div>
+     </div>
+     <div class="container">
+          <section id="common-questions" class="event-card">
               <h2>Common Questions</h2>
               <div class="faq-item">
                   <h3>What is Betech?</h3>
@@ -281,6 +321,31 @@
               <div class="faq-item">
                   <h3>Can I register individually or should we register as a team? </h3>
                   <p>Yes, you can register Solo (individually). If you have a team, we advise you to register together.</p>
+              </div>
+          </section>
+      </div>
+      <div class="container">
+          <section id="sponsors" class="sponsors">
+              <h2>Organizers</h2>
+              <div class="sponsor-logos">
+               <img src="Logo BEST Madrid.jpg" alt="Sponsor 0 Logo">
+               <img src="Logo UPM.png" alt="Sponsor 0 Logo">
+
+
+                  <!-- Add more logos as needed -->
+              </div>
+          </section>
+      </div>
+      <div class="container">
+          <section id="sponsors" class="sponsors">
+              <h2>Our Sponsors</h2>
+              <div class="sponsor-logos">
+                  <img src="Logo ABB.png" alt="Sponsor 1 Logo">
+                  <img src="Logo Acciona.png" alt="Sponsor 2 Logo">
+                  <img src="Logo UPM Racing.png" alt="Sponsor 3 Logo">
+                  <img src="Siemens-logo.svg" alt="Sponsor 4 Logo">
+
+                  <!-- Add more logos as needed -->
               </div>
           </section>
       </div>
